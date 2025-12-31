@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Conditional & Loop Programs</title>
+
+<style>
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0e0e1a;
+    color: #eee;
+    padding: 25px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #00ffe7;
+    text-shadow: 0 0 15px #00ffe7;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.box {
+    background: #1d1d2e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,255,200,0.08);
+    transition: 0.3s;
+}
+.box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(0,255,200,0.25);
+}
+
+.box h3 {
+    margin-bottom: 10px;
+    color: #00d4ff;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: 1px solid #2aa198;
+    background: #0e0e17;
+    color: #eee;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    background: #00f0a8;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #00b37a;
+}
+
+.output {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 7px;
+    background: #11111f;
+    border: 1px solid #007a66;
+    border-radius: 5px;
+    color: #b7ffd9;
+}
+
+</style>
+</head>
+<body>
+
+<h1>JS Conditionals & Loops</h1>
+
+<div class="grid">
+
+<div class="box"><h3>1. Even or Odd</h3>
+<input type="number" id="eo">
+<button onclick="checkEO()">Check</button>
+<div class="output" id="o1"></div></div>
+
+<div class="box"><h3>2. Largest of Two</h3>
+<input id="l1" type="number">
+<input id="l2" type="number">
+<button onclick="largest()">Find</button>
+<div class="output" id="o2"></div></div>
+
+<div class="box"><h3>3. Grade</h3>
+<input id="g" type="number">
+<button onclick="grade()">Find Grade</button>
+<div class="output" id="o3"></div></div>
+
+<div class="box"><h3>4. Day Name</h3>
+<input id="d" type="number" placeholder="1-7">
+<button onclick="day()">Show</button>
+<div class="output" id="o4"></div></div>
+
+<div class="box"><h3>5. + / - / 0</h3>
+<input id="pnz" type="number">
+<button onclick="pnzFunc()">Check</button>
+<div class="output" id="o5"></div></div>
+
+<div class="box"><h3>6. Ticket Price</h3>
+<input id="age" type="number">
+<button onclick="ticket()">Calc</button>
+<div class="output" id="o6"></div></div>
+
+<div class="box"><h3>7. Leap Year?</h3>
+<input id="yr" type="number">
+<button onclick="leap()">Check</button>
+<div class="output" id="o7"></div></div>
+
+<div class="box"><h3>8. Discount</h3>
+<input id="amt" type="number">
+<button onclick="disc()">Calc</button>
+<div class="output" id="o8"></div></div>
+
+<div class="box"><h3>9. Greeting</h3>
+<button onclick="greet()">Time Greet</button>
+<div class="output" id="o9"></div></div>
+
+<div class="box"><h3>10. BMI</h3>
+<input id="w" type="number" placeholder="Kg">
+<input id="h" type="number" placeholder="Meters">
+<button onclick="bmi()">Calc</button>
+<div class="output" id="o10"></div></div>
+
+<div class="box"><h3>11. Guess Game</h3>
+<input id="guess" type="number" placeholder="1-10">
+<button onclick="game()">Check</button>
+<div class="output" id="o11"></div></div>
+
+<div class="box"><h3>12. Sign of Product</h3>
+<button onclick="sign()">Result</button>
+<div class="output" id="o12"></div></div>
+
+<div class="box"><h3>13. Sort 3 Numbers</h3>
+<input id="s1" type="number">
+<input id="s2" type="number">
+<input id="s3" type="number">
+<button onclick="sortNums()">Sort</button>
+<div class="output" id="o13"></div></div>
+
+<div class="box"><h3>14. FizzBuzz</h3>
+<button onclick="fizz()">Run</button>
+<div class="output" id="o14"></div></div>
+
+<div class="box"><h3>15. Print 1–10</h3>
+<button onclick="p10()">Print</button>
+<div class="output" id="o15"></div></div>
+
+<div class="box"><h3>16. Sum 1–100</h3>
+<button onclick="s100()">Sum</button>
+<div class="output" id="o16"></div></div>
+
+<div class="box"><h3>17. Factorial</h3>
+<input id="f" type="number">
+<button onclick="fact()">Calc</button>
+<div class="output" id="o17"></div></div>
+
+<div class="box"><h3>18. Array Iter</h3>
+<button onclick="arr()">Show</button>
+<div class="output" id="o18"></div></div>
+
+<div class="box"><h3>19. Object Iter</h3>
+<button onclick="obj()">Show</button>
+<div class="output" id="o19"></div></div>
+
+<div class="box"><h3>20. Armstrong 3-Digit</h3>
+<button onclick="arms()">Find</button>
+<div class="output" id="o20"></div></div>
+
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+// 1
+function checkEO(){ $("o1").innerText = $("eo").value % 2 ? "Odd" : "Even"; }
+
+// 2
+function largest(){ $("o2").innerText = Math.max($("l1").value, $("l2").value); }
+
+// 3
+function grade(){
+    let m = $("g").value;
+    $("o3").innerText = m>=90?"A":m>=80?"B":m>=70?"C":m>=60?"D":"F";
+}
+
+// 4
+function day(){
+    let a=["","Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+    $("o4").innerText = a[$("d").value] || "Invalid";
+}
+
+// 5
+function pnzFunc(){
+    let x = $("pnz").value;
+    $("o5").innerText = x>0?"Positive":x<0?"Negative":"Zero";
+}
+
+// 6
+function ticket(){
+    let a=$("age").value;
+    $("o6").innerText = a<12?5:a<18?10:a<60?20:15;
+}
+
+// 7
+function leap(){
+    let y=$("yr").value;
+    $("o7").innerText = (y%4==0&&y%100!=0)||y%400==0?"Leap":"Not Leap";
+}
+
+// 8
+function disc(){
+    let p=$("amt").value;
+    $("o8").innerText = p>=100?20:p>=50?10:0;
+}
+
+// 9
+function greet(){
+    let h=new Date().getHours();
+    $("o9").innerText=h<12?"Good Morning":h<18?"Good Afternoon":"Good Evening";
+}
+
+// 10
+function bmi(){
+    let b=$("w").value/($("h").value**2);
+    $("o10").innerText="BMI: "+b.toFixed(2);
+}
+
+// 11
+function game(){
+    let s=7;
+    let g=$("guess").value;
+    $("o11").innerText=g==s?"Correct!":g>s?"Too High":"Too Low";
+}
+
+// 12
+function sign(){
+    let arr=[3,-7,2];
+    let p=arr.reduce((a,b)=>a*b);
+    $("o12").innerText = p>0?"+":"-";
+}
+
+// 13
+function sortNums(){
+    let r=[$("s1").value,$("s2").value,$("s3").value].sort((a,b)=>a-b);
+    $("o13").innerText=r.join(", ");
+}
+
+// 14
+function fizz(){
+    let o="";
+    for(let i=1;i<=50;i++)
+        o+=i%15==0?"FizzBuzz ":i%3==0?"Fizz ":i%5==0?"Buzz ":i+" ";
+    $("o14").innerText=o;
+}
+
+// 15
+function p10(){ $("o15").innerText=[...Array(10)].map((_,i)=>i+1).join(", "); }
+
+// 16
+function s100(){
+    let s=0;
+    for(let i=1;i<=100;i++) s+=i;
+    $("o16").innerText=s;
+}
+
+// 17
+function fact(){
+    let f=1,n=$("f").value;
+    for(let i=1;i<=n;i++) f*=i;
+    $("o17").innerText=f;
+}
+
+// 18
+function arr(){ $("o18").innerText=["HTML","CSS","JS"].join(", "); }
+
+// 19
+function obj(){
+    let o={name:"John",age:18,dept:"IT"},r="";
+    for(let k in o) r+=k+": "+o[k]+" | ";
+    $("o19").innerText=r;
+}
+
+// 20
+function arms(){
+    let r=[];
+    for(let i=100;i<1000;i++){
+        let n=i,sum=0;
+        while(n){ let d=n%10; sum+=d*d*d; n=(n/10)|0; }
+        if(sum==i) r.push(i);
+    }
+    $("o20").innerText=r.join(", ");
+}
+</script>
+</body>
+</html>
