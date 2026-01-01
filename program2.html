@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Largest of Two Numbers</title>
+</head>
+<body>
+<h2>Largest of Two Numbers</h2>
+<input type="number" id="a" placeholder="Enter 1st number">
+<input type="number" id="b" placeholder="Enter 2nd number">
+<button onclick="findLargest()">Find Largest</button>
+<p id="result"></p>
+
+<script>
+function findLargest() {
+  let a = Number(document.getElementById("a").value);
+  let b = Number(document.getElementById("b").value);
+  document.getElementById("result").textContent =
+    (a > b) ? `${a} is larger` : `${b} is larger`;
+}
+</script>
+</body>
+</html>

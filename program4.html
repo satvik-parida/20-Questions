@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Day of Week</title></head>
+<body>
+<h2>Day of Week</h2>
+<input type="number" id="day" placeholder="Enter number 1-7">
+<button onclick="findDay()">Show</button>
+<p id="result"></p>
+
+<script>
+function findDay() {
+ let d = Number(document.getElementById("day").value);
+ let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+ document.getElementById("result").textContent =
+ (d >= 1 && d <= 7) ? days[d-1] : "Invalid Day";
+}
+</script>
+</body>
+</html>

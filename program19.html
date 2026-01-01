@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Array Iteration</title></head>
+<body>
+<h2>Array Iteration</h2>
+<input type="text" id="items" placeholder="Enter items separated by commas">
+<button onclick="show()">Print Items</button>
+<pre id="result"></pre>
+
+<script>
+function show() {
+ let arr = document.getElementById("items").value.split(",");
+ let output = "";
+ for (let element of arr) {
+   output += element.trim() + "\n";
+ }
+ document.getElementById("result").textContent = output;
+}
+</script>
+</body>
+</html>

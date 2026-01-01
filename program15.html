@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Check Number Sign</title></head>
+<body>
+<h2>Check Number Sign (Ternary)</h2>
+<input type="number" id="num" placeholder="Enter number">
+<button onclick="check()">Check</button>
+<p id="result"></p>
+
+<script>
+function check() {
+ let n = Number(document.getElementById("num").value);
+ document.getElementById("result").textContent =
+  (n > 0) ? "Positive" :
+  (n < 0) ? "Negative" : "Zero";
+}
+</script>
+</body>
+</html>

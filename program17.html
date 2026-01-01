@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sum 1 to 100</title></head>
+<body>
+<h2>Sum of Numbers (1 → 100)</h2>
+<button onclick="calc()">Calculate Sum</button>
+<p id="result"></p>
+
+<script>
+function calc() {
+ let sum = 0, i = 1;
+ while(i <= 100) {
+   sum += i;
+   i++;
+ }
+ document.getElementById("result").textContent = "Sum = " + sum;
+}
+</script>
+</body>
+</html>

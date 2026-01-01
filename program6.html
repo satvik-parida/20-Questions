@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ticket Price</title></head>
+<body>
+<h2>Ticket Price Calculator</h2>
+<input type="number" id="age" placeholder="Enter age">
+<button onclick="calc()">Calculate Price</button>
+<p id="result"></p>
+
+<script>
+function calc() {
+ let age = Number(document.getElementById("age").value);
+ let price = (age < 12) ? 5 :
+             (age < 18) ? 10 :
+             (age < 60) ? 20 : 15;
+
+ document.getElementById("result").textContent = "Ticket Price: $" + price;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sort Three Numbers</title></head>
+<body>
+<h2>Sort Three Numbers (Descending)</h2>
+
+<input type="number" id="a" placeholder="Enter 1st number">
+<input type="number" id="b" placeholder="Enter 2nd number">
+<input type="number" id="c" placeholder="Enter 3rd number">
+<button onclick="sort()">Sort</button>
+<p id="result"></p>
+
+<script>
+function sort() {
+ let arr = [
+  Number(document.getElementById("a").value),
+  Number(document.getElementById("b").value),
+  Number(document.getElementById("c").value)
+ ];
+ arr.sort((x, y) => y - x);
+ document.getElementById("result").textContent =
+  "Sorted Order: " + arr.join(", ");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Greeting Based on Time</title></head>
+<body>
+<h2>Greeting Based on Time</h2>
+<input type="number" id="time" placeholder="Enter time (0-23)">
+<button onclick="greet()">Show Greeting</button>
+<p id="result"></p>
+
+<script>
+function greet() {
+ let t = Number(document.getElementById("time").value);
+ let greeting = (t < 12) ? "Good Morning" :
+                (t < 17) ? "Good Afternoon" : "Good Evening";
+ document.getElementById("result").textContent = greeting;
+}
+</script>
+</body>
+</html>
